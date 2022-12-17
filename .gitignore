@@ -9,3 +9,7 @@ core.*
 local/
 tutorials/
 src/TODO
+/luarocks
+/lua
+/lua_modules
+/.luarocks
