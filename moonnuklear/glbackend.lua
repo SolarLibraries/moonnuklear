@@ -7,6 +7,8 @@ local glfw = require("moonglfw")
 local gl = require("moongl")
 local nk = require("moonnuklear")
 
+local unpack = table.unpack or unpack
+
 -- shortcuts
 local floor = math.floor
 local table_insert = table.insert
@@ -162,7 +164,7 @@ local function render()
       local elem_count = cmd.elem_count
       if elem_count > 0 then
          gl.bind_texture('2d', cmd.texture_id)
-         local x, y, w, h = table.unpack(cmd.clip_rect)
+         local x, y, w, h = unpack(cmd.clip_rect)
          x = floor(x * scale_x)
          y = floor((height - (y + h))*scale_y)
          w = floor(w * scale_x)
